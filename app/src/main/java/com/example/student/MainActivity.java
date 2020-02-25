@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.JsonWriter;
 import android.view.View;
 import android.widget.Button;
 
 import org.json.JSONObject;
+
+import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                Intent i = new Intent(MainActivity.this, ShowInfo.class);
                 //i.putExtra("StudentData", StudentInfo);
-                i.putExtra("StudentInfo", StudentInfo);
+                i.putExtra("StudentInfo", (Serializable) StudentInfo);
                startActivity(i);
             }
 
